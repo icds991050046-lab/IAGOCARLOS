@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Portfólio | Iago Carlos</title>
+  <meta name="description" content="Portfólio profissional de Iago Carlos. Tecnologia, design e soluções digitais." />
+
+  <!-- ÍCONE / FAVICON -->
+  <link rel="icon" type="image/png" href="imagelogo.png">
+  <link rel="apple-touch-icon" href="imagelogo.png">
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111827;
+      --primary: #22c55e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0f172a, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 100px 20px 80px;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), #16a34a);
+      color: #052e16;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(34,197,94,.4);
+    }
+
+    .foto-wrapper {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: auto;
+      box-shadow: 0 0 0 6px rgba(34,197,94,.15),
+                  0 30px 60px rgba(0,0,0,.6);
+    }
+
+    .foto-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px 80px;
+    }
+
+    section {
+      margin-top: 80px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* ===== SLIDE CONTÍNUO ===== */
+    .patrocinadores {
+      margin: 60px auto;
+      padding: 40px 0;
+      max-width: 1000px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .patro-track {
+      display: flex;
+      gap: 60px;
+      width: max-content;
+      animation: scroll 25s linear infinite;
+      will-change: transform;
+    }
+
+    .patro-track img {
+      height: 60px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+
+    .patro-track a:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* PAUSAR NO HOVER */
+    .patrocinadores:hover .patro-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+    <div>
+      <h1>Olá, eu sou <span>Iago Carlos</span></h1>
+      <p>
+        Profissional focado em tecnologia, design e soluções digitais.
+        Transformo ideias em produtos modernos, escaláveis e eficientes.
+      </p>
+      <a href="#contato" class="btn">Entrar em Contato</a>
+    </div>
+
+    <div class="foto-wrapper">
+      <img src="foto.jpg" alt="Iago Carlos">
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="sobre">
+    <h2>Sobre mim</h2>
+    <p>
+      Sou Iago Carlos Da Silva, profissional em criação de sites (HTML, CSS e JavaScript),
+      Informática e Marketing Digital (Copywrite e Tráfego Digital).
+    </p>
+  </section>
+
+  <section id="patrocinadores">
+    <h2>Patrocinadores & Parceiros</h2>
+
+    <div class="patrocinadores">
+      <div class="patro-track">
+
+        <!-- ORIGINAL -->
+        <a href="https://www.instagram.com/iago.carlos_s" target="_blank"><img src="impulseads.png"></a>
+        <a href="https://www.google.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"></a>
+        <a href="https://www.microsoft.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"></a>
+        <a href="https://www.ibm.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"></a>
+        <a href="https://icds991050046-lab.github.io/GLOWSHOP/" target="_blank"><img src="glowshoplovemakeup.png"></a>
+        <a href="https://icds991050046-lab.github.io/BARBEARIANAVALHA/" target="_blank"><img src="navalha.png"></a>
+        <a href="https://icds991050046-lab.github.io/ARMAZEMPLSILVA/" target="_blank"><img src="plarmazem.png"></a>
+        <a href="#"><img src="imagelogo.png"></a>
+
+        <!-- DUPLICAÇÃO (OBRIGATÓRIA PARA LOOP) -->
+        <a href="https://www.instagram.com/iago.carlos_s" target="_blank"><img src="impulseads.png"></a>
+        <a href="https://www.google.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"></a>
+        <a href="https://www.microsoft.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"></a>
+        <a href="https://www.ibm.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"></a>
+        <a href="https://icds991050046-lab.github.io/GLOWSHOP/" target="_blank"><img src="glowshoplovemakeup.png"></a>
+        <a href="https://icds991050046-lab.github.io/BARBEARIANAVALHA/" target="_blank"><img src="navalha.png"></a>
+        <a href="https://icds991050046-lab.github.io/ARMAZEMPLSILVA/" target="_blank"><img src="plarmazem.png"></a>
+        <a href="#"><img src="imagelogo.png"></a>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Vamos conversar sobre seus projetos.</p>
+
+    <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <a class="btn" href="mailto:icds991050046@gmail.com">📧 Email</a>
+      <a class="btn" href="https://wa.me/5581991394722" target="_blank">💬 WhatsApp</a>
+      <a class="btn" href="https://www.instagram.com/iago.carlos_s" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 • Iago Carlos • Portfólio Profissional De Informática e Marketing Digital.
+</footer>
+
+</body>
+</html>
