@@ -1,0 +1,2162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portfólio | Iago Carlos</title>
+  <meta
+    name="description"
+    content="Portfólio profissional de Iago Carlos — criação de sites, informática, design e marketing digital."
+  >
+  <meta name="author" content="Iago Carlos">
+  <meta name="theme-color" content="#070b0a">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="imagelogo.png">
+  <link rel="apple-touch-icon" href="imagelogo.png">
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 15% 0%,
+          rgba(34, 197, 94, 0.10),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 12%,
+          rgba(22, 163, 74, 0.08),
+          transparent 25%
+        ),
+        linear-gradient(
+          180deg,
+          #0b120f 0%,
+          var(--bg) 48%,
+          #050807 100%
+        );
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px
+        );
+      background-size: 45px 45px;
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 75%
+      );
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* =========================================================
+       VARIÁVEIS
+    ========================================================= */
+
+    :root {
+      --bg: #070b0a;
+      --bg-soft: #0b1210;
+
+      --card: rgba(16, 25, 22, 0.72);
+      --card-solid: #101916;
+
+      --primary: #22c55e;
+      --primary-dark: #16a34a;
+      --primary-light: #4ade80;
+      --primary-soft: rgba(34, 197, 94, 0.12);
+
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+
+      --border: rgba(255, 255, 255, 0.08);
+
+      --shadow:
+        0 24px 70px rgba(0, 0, 0, 0.35);
+
+      --radius: 20px;
+
+      --max-width: 1180px;
+    }
+
+    /* =========================================================
+       UTILITÁRIOS
+    ========================================================= */
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 40px)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      border-bottom: 1px solid var(--border);
+
+      background:
+        rgba(7, 11, 10, 0.78);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    /* LOGO */
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 11px;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 11px;
+
+      object-fit: cover;
+
+      border: 1px solid
+        rgba(34, 197, 94, 0.25);
+
+      box-shadow:
+        0 0 25px
+        rgba(34, 197, 94, 0.12);
+    }
+
+    .brand-name span {
+      color: var(--primary);
+    }
+
+    /* MENU */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 0.92rem;
+
+      font-weight: 500;
+
+      transition:
+        color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px 17px;
+
+      border: 1px solid
+        rgba(34, 197, 94, 0.25);
+
+      border-radius: 10px;
+
+      background: var(--primary-soft);
+
+      color: #bbf7d0 !important;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 680px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, 0.8fr);
+
+      align-items: center;
+
+      gap: 70px;
+
+      padding: 90px 0 80px;
+    }
+
+    .hero-content {
+      position: relative;
+    }
+
+    /* ETIQUETA */
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 8px 13px;
+
+      border: 1px solid
+        rgba(34, 197, 94, 0.18);
+
+      border-radius: 999px;
+
+      background:
+        rgba(34, 197, 94, 0.07);
+
+      color: #bbf7d0;
+
+      font-size: 0.82rem;
+
+      font-weight: 600;
+
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      box-shadow:
+        0 0 12px var(--primary);
+    }
+
+    /* TÍTULO */
+
+    .hero h1 {
+      max-width: 800px;
+
+      font-size:
+        clamp(2.8rem, 7vw, 5.3rem);
+
+      line-height: 1.02;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 800;
+    }
+
+    .gradient-text {
+      color: var(--primary);
+
+      text-shadow:
+        0 0 35px
+        rgba(34, 197, 94, 0.15);
+    }
+
+    /* DESCRIÇÃO */
+
+    .hero-description {
+      max-width: 690px;
+
+      margin-top: 25px;
+
+      color: var(--muted);
+
+      font-size:
+        clamp(1rem, 2vw, 1.15rem);
+
+      line-height: 1.8;
+    }
+
+    /* BOTÕES */
+
+    .hero-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 13px;
+
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      min-height: 50px;
+
+      padding: 13px 22px;
+
+      border-radius: 12px;
+
+      border: 1px solid transparent;
+
+      text-decoration: none;
+
+      font-size: 0.92rem;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #052e16;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary-light),
+          var(--primary-dark)
+        );
+
+      box-shadow:
+        0 12px 35px
+        rgba(34, 197, 94, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 16px 42px
+        rgba(34, 197, 94, 0.30);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+
+      border-color: var(--border);
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(34, 197, 94, 0.35);
+
+      background:
+        rgba(34, 197, 94, 0.06);
+    }
+
+    /* ESTATÍSTICAS */
+
+    .hero-stats {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 28px;
+
+      margin-top: 45px;
+    }
+
+    .stat {
+      display: grid;
+
+      gap: 2px;
+    }
+
+    .stat strong {
+      font-size: 1.15rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+
+      font-size: 0.78rem;
+    }
+
+    /* =========================================================
+       FOTO
+    ========================================================= */
+
+    .hero-visual {
+      display: flex;
+
+      justify-content: center;
+
+      position: relative;
+    }
+
+    .photo-card {
+      position: relative;
+
+      width: min(390px, 82vw);
+
+      aspect-ratio: 1;
+
+      padding: 10px;
+
+      border-radius: 32px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(34,197,94,0.45),
+          rgba(255,255,255,0.04)
+        );
+
+      box-shadow: var(--shadow);
+
+      transform: rotate(2deg);
+    }
+
+    .photo-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -28px;
+
+      border-radius: 42px;
+
+      border:
+        1px solid
+        rgba(34, 197, 94, 0.08);
+
+      z-index: -1;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius: 25px;
+
+      background: #111827;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.5s ease;
+    }
+
+    .photo-card:hover
+    .photo-inner img {
+      transform: scale(1.04);
+    }
+
+    .availability {
+      position: absolute;
+
+      right: -18px;
+      bottom: 32px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 12px 15px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      background:
+        rgba(10, 17, 14, 0.88);
+
+      backdrop-filter: blur(12px);
+
+      box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.35);
+
+      font-size: 0.78rem;
+
+      color: #d1fae5;
+    }
+
+    .availability::before {
+      content: "";
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      box-shadow:
+        0 0 12px var(--primary);
+    }
+
+    /* =========================================================
+       SEÇÕES
+    ========================================================= */
+
+    section {
+      padding: 95px 0;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .section-heading {
+      max-width: 760px;
+
+      margin: 0 auto 48px;
+
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--primary);
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.14em;
+    }
+
+    .section-heading h2 {
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       SOBRE
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 22px;
+    }
+
+    .about-card,
+    .service-card,
+    .project-card,
+    .contact-card {
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(16,25,22,0.82),
+          rgba(9,14,12,0.72)
+        );
+
+      box-shadow:
+        0 15px 50px
+        rgba(0,0,0,0.18);
+    }
+
+    .about-card {
+      padding: 30px;
+    }
+
+    .about-card h3 {
+      margin-bottom: 13px;
+
+      font-size: 1.2rem;
+    }
+
+    .about-card p {
+      color: var(--muted);
+
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       SERVIÇOS
+    ========================================================= */
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 26px;
+
+      min-height: 220px;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(34,197,94,0.28);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(21,38,29,0.9),
+          rgba(9,14,12,0.8)
+        );
+    }
+
+    .service-icon {
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+
+      place-items: center;
+
+      margin-bottom: 23px;
+
+      border-radius: 12px;
+
+      background:
+        var(--primary-soft);
+
+      border:
+        1px solid
+        rgba(34,197,94,0.12);
+
+      font-size: 1.2rem;
+    }
+
+    .service-card h3 {
+      margin-bottom: 9px;
+
+      font-size: 1rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       PROJETOS
+    ========================================================= */
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .project-card {
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(34,197,94,0.28);
+    }
+
+    .project-image {
+      height: 190px;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(34,197,94,0.18),
+          transparent 55%
+        ),
+        #0b1210;
+
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 70%;
+      height: 70%;
+
+      object-fit: contain;
+
+      transition:
+        transform 0.3s ease;
+    }
+
+    .project-card:hover
+    .project-image img {
+      transform: scale(1.06);
+    }
+
+    .project-content {
+      padding: 23px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 7px;
+
+      font-size: 1.05rem;
+    }
+
+    .project-content p {
+      color: var(--muted);
+
+      font-size: 0.85rem;
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      color: #86efac;
+
+      text-decoration: none;
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: white;
+    }
+
+    /* =========================================================
+       PARCEIROS
+    ========================================================= */
+
+    .partners-wrapper {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 24px 0;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      background:
+        rgba(255,255,255,0.015);
+
+      mask-image:
+        linear-gradient(
+          to right,
+          transparent,
+          black 8%,
+          black 92%,
+          transparent
+        );
+    }
+
+    .partners-track {
+      display: flex;
+
+      align-items: center;
+
+      width: max-content;
+
+      animation:
+        partners-scroll 30s linear infinite;
+
+      will-change: transform;
+    }
+
+    .partners-wrapper:hover
+    .partners-track {
+      animation-play-state: paused;
+    }
+
+    .partner {
+      width: 170px;
+      height: 90px;
+
+      margin: 0 18px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      text-decoration: none;
+    }
+
+    .partner img {
+      width: 120px;
+      height: 55px;
+
+      object-fit: contain;
+
+      filter: grayscale(100%);
+
+      opacity: 0.65;
+
+      transition:
+        filter 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .partner:hover img {
+      filter: grayscale(0%);
+
+      opacity: 1;
+
+      transform: scale(1.05);
+    }
+
+    @keyframes partners-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =========================================================
+       CONTATO
+    ========================================================= */
+
+    .contact-card {
+      padding: 55px 30px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(34,197,94,0.13),
+          transparent 48%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(16,25,22,0.9),
+          rgba(9,14,12,0.8)
+        );
+    }
+
+    .contact-card h2 {
+      font-size:
+        clamp(2rem, 5vw, 3.3rem);
+
+      letter-spacing: -0.045em;
+
+      line-height: 1.1;
+    }
+
+    .contact-card > p {
+      max-width: 570px;
+
+      margin: 15px auto 0;
+
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      border-top:
+        1px solid var(--border);
+
+      padding: 30px 20px;
+
+      color: var(--muted);
+
+      text-align: center;
+
+      font-size: 0.82rem;
+    }
+
+    footer strong {
+      color: var(--text);
+    }
+
+    /* =========================================================
+       RESPONSIVIDADE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .services-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .hero {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 65px;
+      }
+
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .photo-card {
+        width: min(330px, 75vw);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width:
+          min(
+            var(--max-width),
+            calc(100% - 28px)
+          );
+      }
+
+      .site-header .container {
+        width:
+          calc(100% - 28px);
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .nav-cta {
+        padding: 9px 13px;
+
+        font-size: 0.78rem;
+      }
+
+      .brand-name {
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding:
+          55px 0 65px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            2.5rem,
+            13vw,
+            4rem
+          );
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .availability {
+        right: -5px;
+
+        bottom: 18px;
+      }
+
+      .contact-card {
+        padding: 40px 20px;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+      .partner {
+        width: 145px;
+
+        height: 78px;
+
+        margin: 0 10px;
+      }
+
+      .partner img {
+        width: 100px;
+
+        height: 45px;
+      }
+    }
+
+    /* =========================================================
+       ACESSIBILIDADE
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       NAVEGAÇÃO
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        class="brand"
+        href="#"
+        aria-label="Página inicial"
+      >
+
+        <img
+          class="brand-logo"
+          src="imagelogo.png"
+          alt="Logo de Iago Carlos"
+        >
+
+        <span class="brand-name">
+          Iago <span>Carlos</span>
+        </span>
+
+      </a>
+
+      <nav aria-label="Navegação principal">
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#sobre">
+              Sobre
+            </a>
+          </li>
+
+          <li>
+            <a href="#servicos">
+              Serviços
+            </a>
+          </li>
+
+          <li>
+            <a href="#projetos">
+              Projetos
+            </a>
+          </li>
+
+          <li>
+            <a href="#parceiros">
+              Parceiros
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="nav-cta"
+              href="#contato"
+            >
+              Contato
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section
+      class="hero container"
+      style="border-top: 0;"
+    >
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          Tecnologia • Design • Marketing Digital
+        </span>
+
+        <h1>
+          Olá, eu sou<br>
+
+          <span class="gradient-text">
+            Iago Carlos.
+          </span>
+        </h1>
+
+        <p class="hero-description">
+          Profissional focado em Tecnologia, Desenvolvimento,
+          Suporte Técnico, Marketing Digital e Planejamento Administrativo. Transformo ideias em
+          soluções digitais modernas, funcionais e profissionais.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="btn btn-primary"
+            href="#contato"
+          >
+            Entrar em contato →
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#projetos"
+          >
+            Ver projetos
+          </a>
+
+        </div>
+
+        <div
+          class="hero-stats"
+          aria-label="Áreas de atuação"
+        >
+
+          <div class="stat">
+
+            <strong>
+              Web
+            </strong>
+
+            <span>
+              HTML • CSS • JavaScript
+            </span>
+
+          </div>
+
+          <div class="stat">
+
+            <strong>
+              Digital
+            </strong>
+
+            <span>
+              Copywriting • Tráfego
+            </span>
+
+          </div>
+
+          <div class="stat">
+
+            <strong>
+              Tech
+            </strong>
+
+            <span>
+              Informática e soluções
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOTO -->
+
+      <div class="hero-visual">
+
+        <div class="photo-card">
+
+          <div class="photo-inner">
+
+            <img
+              src="foto.jpg"
+              alt="Foto de Iago Carlos"
+              loading="eager"
+            >
+
+          </div>
+
+          <div class="availability">
+            Disponível para projetos
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SOBRE
+    ====================================================== -->
+
+    <section id="sobre">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Sobre mim
+          </span>
+
+          <h2>
+            Tecnologia com criatividade e propósito.
+          </h2>
+
+          <p>
+            Uma apresentação profissional das principais áreas
+            em que atuo e das soluções que posso desenvolver.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <article class="about-card">
+
+            <h3>
+              Quem sou
+            </h3>
+
+            <p>
+              Sou Iago Carlos Da Silva, profissional com atuação
+              em Desenvolvimento, Informática e Marketing Digital.
+              Busco unir tecnologia, criatividade e estratégia para
+              transformar ideias em projetos digitais funcionais
+              e modernos.
+            </p>
+
+          </article>
+
+
+          <article class="about-card">
+
+            <h3>
+              Meu objetivo
+            </h3>
+
+            <p>
+              Desenvolver soluções que ofereçam uma boa experiência
+              ao usuário, comunicação clara e uma presença digital
+              profissional, sempre buscando evolução, qualidade e
+              eficiência em cada projeto.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVIÇOS
+    ====================================================== -->
+
+    <section id="servicos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Especialidades
+          </span>
+
+          <h2>
+            O que eu faço
+          </h2>
+
+          <p>
+            Principais áreas de atuação e serviços que fazem
+            parte do meu trabalho.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <!-- SERVIÇO 1 -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              ⌘
+            </div>
+
+            <h3>
+              Criação de Sites
+            </h3>
+
+            <p>
+              Desenvolvimento de páginas modernas e responsivas
+              utilizando HTML, CSS e JavaScript.
+            </p>
+
+          </article>
+
+
+          <!-- SERVIÇO 2 -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              ▣
+            </div>
+
+            <h3>
+              Informática
+            </h3>
+
+            <p>
+              Soluções e suporte relacionados à tecnologia,
+              informática e ferramentas digitais.
+            </p>
+
+          </article>
+
+
+          <!-- SERVIÇO 3 -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              ✦
+            </div>
+
+            <h3>
+              Banco de Dados
+            </h3>
+
+            <p>
+              Manutenção de Banco de Dados, Linguagem SQL e Experiência de Usuários.
+            </p>
+
+          </article>
+
+
+          <!-- SERVIÇO 4 -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              ↗
+            </div>
+
+            <h3>
+              Tráfego Digital
+            </h3>
+
+            <p>
+              Estratégias de presença digital e divulgação para
+              ampliar o alcance de projetos e negócios.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJETOS
+    ====================================================== -->
+
+    <section id="projetos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Portfólio
+          </span>
+
+          <h2>
+            Projetos em destaque
+          </h2>
+
+          <p>
+            Alguns dos projetos digitais apresentados neste
+            portfólio.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJETO 1 -->
+
+          <article class="project-card">
+
+            <div class="project-image">
+
+              <img
+                src="glowshoplovemakeup.png"
+                alt="Logo Glow Shop Love Makeup"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                Glow Shop Love Makeup
+              </h3>
+
+              <p>
+                Projeto de presença digital desenvolvido para
+                uma loja de produtos de beleza e maquiagem.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://icds991050046-lab.github.io/GLOWSHOP/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visitar projeto →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJETO 2 -->
+
+          <article class="project-card">
+
+            <div class="project-image">
+
+              <img
+                src="navalha.png"
+                alt="Logo Barbearia Navalha"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                Barbearia Navalha
+              </h3>
+
+              <p>
+                Projeto de site e identidade digital para
+                apresentação de serviços de barbearia.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://icds991050046-lab.github.io/BARBEARIANAVALHA/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visitar projeto →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJETO 3 -->
+
+          <article class="project-card">
+
+            <div class="project-image">
+
+              <img
+                src="plarmazem.png"
+                alt="Logo PL Armazém"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                PL Armazém
+              </h3>
+
+              <p>
+                Projeto de apresentação digital para um negócio,
+                com foco em organização das informações e
+                presença online.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://icds991050046-lab.github.io/ARMAZEMPLSILVA/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visitar projeto →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PARCEIROS
+    ====================================================== -->
+
+    <section id="parceiros">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Conexões
+          </span>
+
+          <h2>
+            Patrocinadores &amp; Parceiros
+          </h2>
+
+          <p>
+            Empresas, projetos e marcas relacionados ao meu
+            portfólio digital.
+          </p>
+
+        </div>
+
+
+        <div
+          class="partners-wrapper"
+          aria-label="Patrocinadores e parceiros"
+        >
+
+          <div class="partners-track">
+
+
+            <!-- =================================================
+                 GRUPO ORIGINAL
+            ================================================== -->
+
+
+            <!-- IMPULSE ADS -->
+
+            <a
+              class="partner"
+              href="https://www.instagram.com/iago.carlos_s"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+
+              <img
+                src="impulseads.png"
+                alt="Impulse Ads"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- GOOGLE -->
+
+            <a
+              class="partner"
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                alt="Google"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- MICROSOFT -->
+
+            <a
+              class="partner"
+              href="https://www.microsoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Microsoft"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- IBM -->
+
+            <a
+              class="partner"
+              href="https://www.ibm.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="IBM"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+                alt="IBM"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- GLOWSHOP -->
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/GLOWSHOP/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Glow Shop Love Makeup"
+            >
+
+              <img
+                src="glowshoplovemakeup.png"
+                alt="Glow Shop Love Makeup"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- BARBEARIA -->
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/BARBEARIANAVALHA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Barbearia Navalha"
+            >
+
+              <img
+                src="navalha.png"
+                alt="Barbearia Navalha"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- PL ARMAZÉM -->
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/ARMAZEMPLSILVA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="PL Armazém"
+            >
+
+              <img
+                src="plarmazem.png"
+                alt="PL Armazém"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- LOGO IAGO -->
+
+            <a
+              class="partner"
+              href="#"
+              aria-label="Iago Carlos"
+            >
+
+              <img
+                src="imagelogo.png"
+                alt="Iago Carlos"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <!-- =================================================
+                 DUPLICAÇÃO PARA LOOP
+            ================================================== -->
+
+
+            <a
+              class="partner"
+              href="https://www.instagram.com/iago.carlos_s"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+
+              <img
+                src="impulseads.png"
+                alt="Impulse Ads"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://www.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                alt="Google"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://www.microsoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Microsoft"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://www.ibm.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="IBM"
+            >
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+                alt="IBM"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/GLOWSHOP/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Glow Shop Love Makeup"
+            >
+
+              <img
+                src="glowshoplovemakeup.png"
+                alt="Glow Shop Love Makeup"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/BARBEARIANAVALHA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Barbearia Navalha"
+            >
+
+              <img
+                src="navalha.png"
+                alt="Barbearia Navalha"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="https://icds991050046-lab.github.io/ARMAZEMPLSILVA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="PL Armazém"
+            >
+
+              <img
+                src="plarmazem.png"
+                alt="PL Armazém"
+                loading="lazy"
+              >
+
+            </a>
+
+
+            <a
+              class="partner"
+              href="#"
+              aria-label="Iago Carlos"
+            >
+
+              <img
+                src="imagelogo.png"
+                alt="Iago Carlos"
+                loading="lazy"
+              >
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTATO
+    ====================================================== -->
+
+    <section id="contato">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <span class="section-kicker">
+            Vamos conversar
+          </span>
+
+          <h2>
+            Tem um projeto em mente?
+          </h2>
+
+          <p>
+            Entre em contato para conversar sobre seu projeto,
+            site, presença digital ou solução em tecnologia.
+          </p>
+
+
+          <div class="contact-actions">
+
+
+            <!-- EMAIL -->
+
+            <a
+              class="btn btn-primary"
+              href="mailto:icds991050046@gmail.com"
+            >
+              ✉ Email
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/5581995622675"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 WhatsApp
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+              class="btn btn-secondary"
+              href="https://www.instagram.com/iago.carlos_s"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ◎ Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <p>
+      © 2026 •
+      <strong>Iago Carlos</strong>
+      • Portfólio Profissional de Informática,
+      Tecnologia e Marketing Digital.
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
